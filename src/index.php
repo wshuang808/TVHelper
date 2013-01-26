@@ -13,7 +13,6 @@ if ($wechatObj->checkSignature())
     $wechatObj->responseMsg();
 }
 
-
 class wechatCallbackapiTest
 {
     public function valid()
@@ -137,6 +136,10 @@ EOD;
                     break;
                 case "你好":
                     $result = "你好";
+                    break;
+                case "":
+                case "帮助":
+                    $result = "欢迎使用本工具。请输入电视台名称进行查询，比如\"东方卫视\"";
                     break;
                 default:
                     $result = "你说什么我不懂";
